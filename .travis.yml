@@ -1,0 +1,10 @@
+sudo: required
+services:
+  - docker
+
+before_install: 
+  - docker build -t akano-react -f Dockerfile.dev .
+
+script: 
+  - docker run -e CI=true akano-react npm run test
+ 
