@@ -7,4 +7,16 @@ before_install:
 
 script: 
   - docker run -e CI=true akano-react npm run test -- --coverage
+
+deploy:
+  provider: elasticbeanstalk
+  region: "eu-west-2"
+  app: "dev-bstalk-01"
+  env: "Dev-bstalk-01-env"
+  bucket_name: "elasticbeanstalk-eu-west-2-029884995067"
+  bucket_path: "dev-bstalk-01"
+  on:
+    branch: master
+  access_key_id: "$AWS_ACCESS_KEY"
+  secret_access_key: "$AWS_SECRET_KEY"
   
