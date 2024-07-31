@@ -10,10 +10,10 @@ script:
 
 deploy:
   provider: elasticbeanstalk
-  region: "eu-west-2"
+  region: "us-east-2"
   app: "dev-bstalk-01"
   env: "Dev-bstalk-01-env"
-  bucket_name: "elasticbeanstalk-eu-west-2-029884995067"
+  bucket_name: "elasticbeanstalk-us-east-1-463374320634"
   bucket_path: "dev-bstalk-01"
   on:
     branch: master
